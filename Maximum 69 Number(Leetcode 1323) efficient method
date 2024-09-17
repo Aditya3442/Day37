@@ -1,0 +1,19 @@
+class Solution {
+    public int maximum69Number (int num) {
+        
+        int index=-1;
+        int temp=num;
+        int p=0;
+        while(temp!=0){
+            int t=temp%10;
+            if(t==6)
+                index=p;
+            temp=temp/10;
+            p++;
+        }
+        if(index==-1)
+            return num;
+        else
+            return num + 3 * (int)Math.pow(10,index);
+    }
+}
